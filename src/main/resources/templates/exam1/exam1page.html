@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>1교시</h1>
+	<hr>
+
+<form action="exam1" method="post">
+    <div>
+    	<input type="hidden" name="username" value="${}">
+        <p>1. 선생님의 성함은 무엇인가요?</p>
+        <input type="radio" name="useranswer" value="이승호" id="q1_option1">
+        <label for="q1_option1">이승호</label><br />
+        <input type="radio" name="useranswer" value="김승호" id="q1_option2">
+        <label for="q1_option2">김승호</label><br />
+        <input type="radio" name="useranswer" value="정승호" id="q1_option3">
+        <label for="q1_option3">정승호</label><br />
+        <input type="radio" name="useranswer" value="박승호" id="q1_option4">
+        <label for="q1_option4">박승호</label>
+    </div><br />
+    <input type="submit" value="제출하기">
+</form>
+
+
+</body>
+</html>
