@@ -21,7 +21,7 @@ public class UserService {
 		String encodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
 		user.setPassword(encodedPassword);
 		
-		user.setRole("STUDENT");
+		user.setRole("ROLE_STUDENT");
 		
 		userDao.registUser(user);
 	}
