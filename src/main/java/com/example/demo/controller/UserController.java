@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.example.demo.dao.IUserDao;
 
 @Controller
+@RequestMapping("/students")
 public class UserController {
 
 	@Autowired
@@ -14,12 +15,17 @@ public class UserController {
 	
 	@GetMapping("/mypage")
 	public String mypage() {
-		return "mypage";
+		return "students/mypage";
 	}
 	
 	@GetMapping("/myscorepage")
 	public String getScore() {
-		return "myscorepage";
+		return "students/myscorepage";
 	}
 	
+	@GetMapping("/exampage")
+	public String exmapage() {
+		return "students/exampage";
+	}
+
 }

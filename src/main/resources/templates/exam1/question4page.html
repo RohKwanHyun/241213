@@ -8,8 +8,10 @@
 	<h1>1교시</h1>
 	<hr>
 
-<form action="exam4" method="post">
+<form action="question4" method="post">
     <div>
+    	<input type="text" name="username" value="${username}" readonly>
+    	<input type="text" name="questionno" value="4">
         <p>4. 우리반에서 가장 어린 사람은 몇살인가요?</p>
         <input type="radio" name="useranswer" value="23살" id="q4_option1">
         <label for="q4_option1">23살</label><br />
@@ -19,10 +21,9 @@
         <label for="q4_option3">25살</label><br />
         <input type="radio" name="useranswer" value="26살" id="q4_option4">
         <label for="q4_option4">26살</label>
+        <input type="text" name="score" value="20">
     </div><br />
     <input type="submit" value="제출하기">
 </form>
-
-
 </body>
 </html>

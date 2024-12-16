@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -8,9 +8,10 @@
 	<h1>1교시</h1>
 	<hr>
 
-<form action="exam1" method="post">
+<form action="question1" method="post">
     <div>
-    	<input type="hidden" name="username" value="${}">
+    	<input type="text" name="username" value="${username}" readonly>
+    	<input type="text" name="questionno" value="1">
         <p>1. 선생님의 성함은 무엇인가요?</p>
         <input type="radio" name="useranswer" value="이승호" id="q1_option1">
         <label for="q1_option1">이승호</label><br />
@@ -20,10 +21,9 @@
         <label for="q1_option3">정승호</label><br />
         <input type="radio" name="useranswer" value="박승호" id="q1_option4">
         <label for="q1_option4">박승호</label>
+        <input type="text" name="score" value="20">
     </div><br />
     <input type="submit" value="제출하기">
 </form>
-
-
 </body>
 </html>
