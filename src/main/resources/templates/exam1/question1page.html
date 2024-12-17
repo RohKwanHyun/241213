@@ -9,20 +9,20 @@
 	<hr>
 
 <form action="question1" method="post">
-    <div>
-    	<input type="text" name="username" value="${username}" readonly>
-    	<input type="text" name="questionno" value="1">
-        <p>1. 선생님의 성함은 무엇인가요?</p>
-        <input type="radio" name="useranswer" value="이승호" id="q1_option1">
-        <label for="q1_option1">이승호</label><br />
-        <input type="radio" name="useranswer" value="김승호" id="q1_option2">
-        <label for="q1_option2">김승호</label><br />
-        <input type="radio" name="useranswer" value="정승호" id="q1_option3">
-        <label for="q1_option3">정승호</label><br />
-        <input type="radio" name="useranswer" value="박승호" id="q1_option4">
-        <label for="q1_option4">박승호</label>
-        <input type="text" name="score" value="20">
-    </div><br />
+   	<input type="hidden" name="examno" th:value="${examno}">
+   	<input type="hidden" name="username" th:value="${username}">
+   	<input type="hidden" name="questionno" value="1">
+	<p>1. 선생님의 성함은 무엇인가요?</p>
+	<input type="radio" name="useranswer" value="신승호" id="q1_option1">
+	<label for="q1_option1">신승호</label><br />
+	<input type="radio" name="useranswer" value="김승호" id="q1_option2">
+	<label for="q1_option2">김승호</label><br />
+	<input type="radio" name="useranswer" value="정승호" id="q1_option3">
+	<label for="q1_option3">정승호</label><br />
+	<input type="radio" name="useranswer" value="박승호" id="q1_option4">
+	<label for="q1_option4">박승호</label>
+	<input type="hidden" name="score" value="20">
+	<input type="hidden" name="_csrf" th:value="${_csrf.token}"><br/>
     <input type="submit" value="제출하기">
 </form>
 </body>

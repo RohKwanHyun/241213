@@ -5,10 +5,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/mypage">마이페이지로 가기</a>
+<a href="/students/mypage">마이페이지로 가기</a>
 <form action="/logout" method="post">
 	<input type="hidden" name="_csrf" th:value="${_csrf.token}"><br/>
 	<input type="submit" value="로그아웃">
 </form>
+
+<table border="1">
+	<tr>
+		<td>회차</td>
+		<td>이름</td>
+		<td>점수</td>
+	</tr>
+	<tr th:each="yourscore, iter : ${yourscore}">
+		<td th:text="${iter.count}"></td>
+		<td th:text="${yourscore.name}"></td>
+		<td th:text="${yourscore.totalscore}"></td>
+	</tr>
+</table>
+
 </body>
 </html>

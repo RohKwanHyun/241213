@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.IExamDao">
-
+	<select id="getScoreById" resultType="com.example.demo.entity.UserExam">
+		SELECT e.examno, u.name, 
+		SUM(CASE WHEN ue.useranswer = q.answer THEN q.score ELSE 0 END) AS totalscore
+		FROM Userexam ue
+		JOIN Questions q ON ue.QuestionNo = q.QuestionNo
+		JOIN user u ON u.username = ue.username
+		JOIN Exam e on e.examno = ue.examno 
+		WHERE u.username = #{username} GROUP BY u.name, e.examno;
+	</select>
+	<select id="getScoreList" resultType="com.example.demo.entity.UserExam">
+		SELECT e.examno, u.name,
+		SUM(CASE WHEN ue.useranswer = q.answer THEN q.score ELSE 0 END) AS totalscore
+		FROM Userexam ue
+		JOIN Questions q ON ue.QuestionNo = q.QuestionNo
+		JOIN user u ON u.username = ue.username
+		JOIN Exam e on e.examno = ue.examno 
+		GROUP BY u.username, e.examno
+		order by e.examno asc;
+	</select>
+	<insert id="insertResult">
+		INSERT INTO UserExam (examno, username, questionno, useranswer, score) VALUES
+		(#{examno}, #{username}, #{questionno}, #{useranswer}, #{score})
+	</insert>
+	<insert id="submitExam">
+		INSERT INTO UserExam (examno, username, questionno, useranswer) VALUES
+		(#{examno}, #{userexam.username}, #{userexam.questionno}, #{userexam.useranswer})
+	</insert>
+	<insert id="createExamno">
+    	INSERT INTO Exam (ExamDate) VALUES (CURRENT_TIMESTAMP)
+	</insert>
+	<select id="getExamno" resultType="int">
+		SELECT examno FROM Exam order by examdate desc limit 1
+	</select>
 </mapper>

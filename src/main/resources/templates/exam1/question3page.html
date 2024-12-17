@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -9,20 +9,20 @@
 	<hr>
 
 <form action="question3" method="post">
-    <div>
-    	<input type="text" name="username" value="${username}" readonly>
-    	<input type="text" name="questionno" value="3">
-        <p>3. 우리반은 몇 호실인가요?</p>
-        <input type="radio" name="useranswer" value="417호" id="q3_option1">
-        <label for="q3_option1">417호</label><br />
-        <input type="radio" name="useranswer" value="425호" id="q3_option2">
-        <label for="q3_option2">425호</label><br />
-        <input type="radio" name="useranswer" value="427호" id="q3_option3">
-        <label for="q3_option3">427호</label><br />
-        <input type="radio" name="useranswer" value="421호" id="q3_option4">
-        <label for="q3_option4">421호</label>
-        <input type="text" name="score" value="20">
-    </div><br />
+   	<input type="hidden" name="examno" th:value="${examno}">
+   	<input type="hidden" name="username" th:value="${username}">
+   	<input type="hidden" name="questionno" value="3">
+	<p>3. 우리반은 몇 호실인가요?</p>
+	<input type="radio" name="useranswer" value="417호" id="q3_option1">
+	<label for="q3_option1">417호</label><br />
+	<input type="radio" name="useranswer" value="425호" id="q3_option2">
+	<label for="q3_option2">425호</label><br />
+	<input type="radio" name="useranswer" value="427호" id="q3_option3">
+	<label for="q3_option3">427호</label><br />
+	<input type="radio" name="useranswer" value="421호" id="q3_option4">
+	<label for="q3_option4">421호</label>
+    <input type="hidden" name="score" value="20">
+	<input type="hidden" name="_csrf" th:value="${_csrf.token}"><br/>
     <input type="submit" value="제출하기">
 </form>
 </body>

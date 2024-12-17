@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -9,20 +9,20 @@
 	<hr>
 
 <form action="question4" method="post">
-    <div>
-    	<input type="text" name="username" value="${username}" readonly>
-    	<input type="text" name="questionno" value="4">
-        <p>4. 우리반에서 가장 어린 사람은 몇살인가요?</p>
-        <input type="radio" name="useranswer" value="23살" id="q4_option1">
-        <label for="q4_option1">23살</label><br />
-        <input type="radio" name="useranswer" value="24살" id="q4_option2">
-        <label for="q4_option2">24살</label><br />
-        <input type="radio" name="useranswer" value="25살" id="q4_option3">
-        <label for="q4_option3">25살</label><br />
-        <input type="radio" name="useranswer" value="26살" id="q4_option4">
-        <label for="q4_option4">26살</label>
-        <input type="text" name="score" value="20">
-    </div><br />
+   	<input type="hidden" name="examno" th:value="${examno}">
+   	<input type="hidden" name="username" th:value="${username}">
+   	<input type="hidden" name="questionno" value="4">
+	<p>4. 우리반에서 가장 어린 사람은 몇살인가요?</p>
+    <input type="radio" name="useranswer" value="23살" id="q4_option1">
+    <label for="q4_option1">23살</label><br />
+    <input type="radio" name="useranswer" value="24살" id="q4_option2">
+    <label for="q4_option2">24살</label><br />
+    <input type="radio" name="useranswer" value="25살" id="q4_option3">
+    <label for="q4_option3">25살</label><br />
+    <input type="radio" name="useranswer" value="26살" id="q4_option4">
+    <label for="q4_option4">26살</label>
+    <input type="hidden" name="score" value="20">
+	<input type="hidden" name="_csrf" th:value="${_csrf.token}"><br/>
     <input type="submit" value="제출하기">
 </form>
 </body>

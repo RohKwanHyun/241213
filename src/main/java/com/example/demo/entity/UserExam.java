@@ -11,5 +11,8 @@ public class UserExam {
 	private int questionno;
 	private String useranswer;
 	private int score;
+	private int totalscore;
+	private String username;
+	private String name;
 	
 }

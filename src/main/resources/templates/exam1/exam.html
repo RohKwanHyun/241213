@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>1교시</h1>
+	<hr>
+
+<form action="submitExam" method="post">
+    <input type="hidden" name="examno" th:value="${examno}">
+    <input type="hidden" name="username" th:value="${username}">
+
+    <input type="hidden" name="questionno[]" value="1">
+    <p>1. 선생님의 성함은 무엇인가요?</p>
+    <input type="radio" name="useranswer[0]" value="신승호" id="q1_option1">
+    <label for="q1_option1">신승호</label><br />
+    <input type="radio" name="useranswer[0]" value="김승호" id="q1_option2">
+    <label for="q1_option2">김승호</label><br />
+    <input type="radio" name="useranswer[0]" value="정승호" id="q1_option3">
+    <label for="q1_option3">정승호</label><br />
+    <input type="radio" name="useranswer[0]" value="박승호" id="q1_option4">
+    <label for="q1_option4">박승호</label>
+    
+    <input type="hidden" name="questionno[]" value="2">
+    <p>2. 우리반의 총원은 몇명인가요?</p>
+    <input type="radio" name="useranswer[1]" value="20명" id="q2_option1">
+    <label for="q2_option1">20명</label><br />
+    <input type="radio" name="useranswer[1]" value="18명" id="q2_option2">
+    <label for="q2_option2">18명</label><br />
+    <input type="radio" name="useranswer[1]" value="19명" id="q2_option3">
+    <label for="q2_option3">19명</label><br />
+    <input type="radio" name="useranswer[1]" value="17명" id="q2_option4">
+    <label for="q2_option4">17명</label>
+    
+    <input type="hidden" name="questionno[]" value="3">
+    <p>3. 우리반은 몇 호실인가요?</p>
+    <input type="radio" name="useranswer[2]" value="417호" id="q3_option1">
+    <label for="q3_option1">417호</label><br />
+    <input type="radio" name="useranswer[2]" value="425호" id="q3_option2">
+    <label for="q3_option2">425호</label><br />
+    <input type="radio" name="useranswer[2]" value="427호" id="q3_option3">
+    <label for="q3_option3">427호</label><br />
+    <input type="radio" name="useranswer[2]" value="421호" id="q3_option4">
+    <label for="q3_option4">421호</label>
+    
+    <input type="hidden" name="questionno[]" value="4">
+    <p>4. 우리반에서 가장 어린 사람은 몇살인가요?</p>
+    <input type="radio" name="useranswer[3]" value="23살" id="q4_option1">
+    <label for="q4_option1">23살</label><br />
+    <input type="radio" name="useranswer[3]" value="24살" id="q4_option2">
+    <label for="q4_option2">24살</label><br />
+    <input type="radio" name="useranswer[3]" value="25살" id="q4_option3">
+    <label for="q4_option3">25살</label><br />
+    <input type="radio" name="useranswer[3]" value="26살" id="q4_option4">
+    <label for="q4_option4">26살</label>
+    
+    <input type="hidden" name="questionno[]" value="5">
+    <p>5. 우리반에서 가장 나이가 많은 사람은 몇살인가요?</p>
+    <input type="radio" name="useranswer[4]" value="33살" id="q5_option1">
+    <label for="q5_option1">33살</label><br />
+    <input type="radio" name="useranswer[4]" value="32살" id="q5_option2">
+    <label for="q5_option2">32살</label><br />
+    <input type="radio" name="useranswer[4]" value="31살" id="q5_option3">
+    <label for="q5_option3">31살</label><br />
+    <input type="radio" name="useranswer[4]" value="50살" id="q5_option4">
+    <label for="q5_option4">50살</label>
+    
+    <input type="hidden" name="_csrf" th:value="${_csrf.token}"><br/>
+    <input type="submit" value="제출하기">
+</form>
+
+</body>
+</html>
